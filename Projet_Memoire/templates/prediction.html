@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REsultat</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--<link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</head>
+<br>
+<!--Bar de navigation-->
+<!--Navbar-->
+
+           <nav class="navbar navbar-expand-lg bg-primary navbar-dark ">
+                <div class="container">
+               <a href="/home" class="navbar-brand">Acceuil</a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+               <div class="colapse navbar-collapse" id="navmenu">
+                  <ul class="navbar-nav ">
+                   <li class="nav-item">
+                      <a href="/annuaire" class="nav-link">Annuaire</a>
+                   </li>
+                   <li class="nav-item">
+                      <a href="/dicomedical" class="nav-link">Dico Medical</a>
+                   </li>
+                   <li class="nav-item">
+                      <a href="/index" class="nav-link">Votre Sante</a>
+                   </li>
+                   <li class="nav-item">
+                      <a href="/about" class="nav-link">Apropos</a>
+                   </li>
+                  </ul>
+
+                   <form class="form-inline ">
+                       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                       <button class="btn btn-outline-success my-sm-4 " type="submit">Search</button>
+                    </form>
+
+                   <!-- Nav Bar Right -->
+                  <ul class="navbar-nav ml-auto ">
+                     <li class="nav-item">
+                         <span class="nav-link"> <b>{{session['lastname']}}</b></span>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="logout">Deconnecter</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/login">Se connecter</a>
+                     </li>
+                   </ul>
+               </div>
+              </div>
+           </nav>
+
+<!--Body-->
+<section class="bg-info text-light p-5 p-lg-0 pt-lg-5 test-center text-em-start light-d lighten-1" role="navigation">
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+     <h5 style="text-align: center; color: brown; font-weight: 600;">{{pred}}</h5>
+      <h1 class="header center text-warning">Prédiction du diabète</h1>
+      <div class="row center">
+        <h5 class="header col s12 light text-warning" style="margin:2% 0% 5% 0%">Prédire la probabilité d'avoir le diabète
+        <br>
+        </h5>
+      </div>
+
+
+      <div class="row">
+        <form action='/predict' method="post" class="col s12 text-white">
+            <div class="row">
+
+                <div class="input-field col s4">
+                    <label Class="orange-text" for="first_name"><b>Âge</b></label>
+                    <br>
+                    <input placeholder="Âge" name="1" id="first_name" type="text" class="validate">
+                </div>
+
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="sex"><b>Genre</b></label>
+                    <br>
+{#                    <input placeholder="sex" name="2" id="sex" type="text" class="validate">#}
+                     <select style="height: 50%; width: 97%"  name="2" id="sex" type="text" class="validate">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="last_name"><b>Polyurie</b></label>
+                    <br>
+                    <input id="last_name" name="3" placeholder="Polyurie"  type="text" class="validate">
+                </div>
+
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="first_name"><b>Polydipsie</b></label>
+                    <br>
+                    <input placeholder="Polydipsie" name="4" id="first_name" type="text" class="validate">
+                </div>
+
+                 <div class="input-field col s4">
+                    <label Class="orange-text"  for="last_name"><b>Perte de poids soudaine </b></label>
+                    <br>
+                    <input id="last_name" name="5" placeholder="Perte de poids soudaine"  type="text" class="validate">
+                </div>
+
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="first_name"><b>faiblesse</b></label>
+                    <br>
+                    <input placeholder="faiblesse" name="6" id="first_name" type="text" class="validate">
+                </div>
+
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="_name"><b>Polyphagie</b></label>
+                    <br>
+                    <input id="_name" name="7" placeholder="Polyphagie" type="text" class="validate">
+
+                </div>
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="first_name"><b>Hrush génital</b></label>
+                    <br>
+                    <input placeholder="Hrush génital" name="8" id="first_name" type="text" class="validate">
+                </div>
+
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="first_name"><b>visuel flou</b></label>
+                    <br>
+                    <input placeholder="visuel flou" name="9" id="first_name" type="text" class="validate">
+                </div>
+
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="last_name"><b>Démangeaison</b></label>
+                    <br>
+                    <input id="last_name" name="10" placeholder="Démangeaison"  type="text" class="validate">
+                </div>
+
+                 <div class="input-field col s4">
+                    <label Class="orange-text"  for="last_name"><b>Irritabilité</b></label>
+                    <br>
+                    <input id="last_name" name="11" placeholder="Irritabilité"  type="text" class="validate">
+                </div>
+
+                <div class="input-field col s4">
+                  <label Class="orange-text"  ><b>guérison retardée</b></label>
+                  <br>
+                  <input name = '12' placeholder="guérison retardée">
+                </div>
+
+                <div class="input-field col s4">
+                  <label Class="orange-text"  ><b>parésie partielle</b></label>
+                  <br>
+                  <input name = '13' placeholder="parésie partielle">
+
+                </div>
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="last_name"><b>raideur musculaire</b></label>
+                    <br>
+                    <input id="last_name" name="14" placeholder="raideur musculaire"  type="text" class="validate">
+                </div>
+
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="_name"><b>Alopécie</b></label>
+                    <br>
+                    <input id="_name" name="15" placeholder="Alopécie" type="text" class="validate">
+                </div>
+
+                </div>
+                <div class="input-field col s4">
+                    <label  Class="orange-text"  for="last_name"><b>Obésité</b></label>
+                    <br>
+                    <input id="last_name" name="16" placeholder="Obésité" type="text" class="validate">
+                </div>
+{#      </div>#}
+          <div class="row center">
+
+              <button type="submit" class="row btn btn-primary btn-lg " style="margin:2% 0% 0% 25%">Prédire la probabilité</button>
+
+          </div>
+        </form>
+  </div>
+
+      <br>
+
+
+    <br><br>
+  </div>
+  </div>
+</section>
+
+<!--Footer-->
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+           <br>
+          <br>
+
+          <img src="https://img.icons8.com/color/48/000000/whatsapp--v6.png"/>
+          <img src="https://img.icons8.com/color/48/000000/facebook-circled--v1.png"/>
+          <img src="https://img.icons8.com/color/48/000000/instagram-new.png"/>
+          <img src="https://img.icons8.com/color/48/000000/twitter--v1.png"/>
+
+          <p>&copy; IPD 2021</p>
+          <p>groupsoutenance@gmail.com</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+          <br>
+           <br>
+
+          <img src="https://img.icons8.com/color/48/000000/whatsapp--v6.png"/>
+          <img src="https://img.icons8.com/color/48/000000/facebook-circled--v1.png"/>
+          <img src="https://img.icons8.com/color/48/000000/instagram-new.png"/>
+          <img src="https://img.icons8.com/color/48/000000/twitter--v1.png"/>
+
+          <p>&copy; IPD 2021</p>
+          <p>groupsoutenance@gmail.com</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+<!-- JavaScript Bundle with Popper -->
+<script src = " https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js " integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+.flex-text{
+    margin: 5%;
+}
+p{
+    text-align: justify;
+}
+.positoin-text {
+    width: 50%;
+    height: 50%;
+}
+.positoin-text{
+    display: inline;
+}
+img-fluid-2 {
+width:50px;
+    height: 100px;
+
+}

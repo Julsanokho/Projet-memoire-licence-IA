@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Annuaire</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--<link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/annuaire.css') }}">
+</head>
+<br>
+<!--Bar de navigation-->
+<!--Navbar-->
+
+           <nav class="navbar navbar-expand-lg bg-primary navbar-dark ">
+                <div class="container">
+               <a href="/home" class="navbar-brand">Acceuil</a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+               <div class="colapse navbar-collapse" id="navmenu">
+                  <ul class="navbar-nav ">
+                   <li class="nav-item">
+                      <a href="/annuaire" class="nav-link">Annuaire</a>
+                   </li>
+                   <li class="nav-item">
+                      <a href="/dicomedical" class="nav-link">Dico Medical</a>
+                   </li>
+                   <li class="nav-item">
+                      <a href="/index" class="nav-link">Votre Sante</a>
+                   </li>
+                   <li class="nav-item">
+                      <a href="/about" class="nav-link">Apropos</a>
+                   </li>
+                  </ul>
+
+                   <form class="form-inline ">
+                       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                       <button class="btn btn-outline-success my-sm-4 " type="submit">Search</button>
+                    </form>
+
+                   <!-- Nav Bar Right -->
+                  <ul class="navbar-nav ml-auto ">
+                     <li class="nav-item">
+                         <span class="nav-link"> <b>{{session['lastname']}}</b></span>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/logout">Deconnecter</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/login">Se connecter</a>
+                     </li>
+                   </ul>
+               </div>
+              </div>
+           </nav>
+
+
+
+
+<!--Body-->
+<section class="bg-info text-light p-5 p-lg-0 pt-lg-5 test-center text-em-start">
+    <h1 class="row" style="margin:1% 1% 2% 3%;margin-left: 16%" ><span class="text-warning">Diabète : conseils pratiques</span> </h1>
+
+    <div>
+        <div style="text-align: center;width: 70%;margin-left: 15%" class="lead my-5">
+            <div class="d-sm-flex m-5">
+                <p>
+                    Le diabète est une maladie chronique
+                    qui doit être suivie afin de connaître son évolution
+                    et mieux pouvoir y réagir. Le diabète est évolutif
+                   et le traitement doit être réévalué régulièrement dans toutes ses composantes :
+                    mesures hygiéno-diététiques, activité sportive, alimentation…
+                </p>
+                 <img style="height:50%; width:50%" class='img-fluid w-30 h d-none d-sm-block m-2 ' src="{{url_for('static', filename='images/img.png')}}" >
+            </div>
+
+                <h1 class="row" style="margin:1% 1% 2% 3%" ><span class="text-warning">. Suivre son diabète</span> </h1>
+                <h3 class="row" style="margin:1% 1% 2% 3%" ><span class="text-primary">Auto-surveillance</span></h3>
+            <div class="d-sm-flex m-5">
+                <p>
+
+                    Suivre son diabèteLe maintien de l’équilibre glycémique
+                    est le principal objectif de la prise en charge du diabète.
+                    Cet équilibre glycémique oblige à une auto-surveillance régulière
+                    pour éviter les variations de la glycémie, un taux de sucre
+                    dans le sang trop élevé (hyperglycémie) ou trop bas (hypoglycémie).<br><br>
+
+                    L’équilibre glycémique se surveille de 2 façons :<br><br>
+
+                    En laboratoire d’analyse : tous les 3 mois,
+                    on mesure la glycémie à jeun ou l’hémoglobine glyquée (HbA1c)
+                    Par un lecteur de glycémie :
+                    le patient peut contrôler plusieurs fois
+                    par jour sa glycémie capillaire (sur une goutte de sang)
+                    à des moments précis.
+                    C’est ce qu’on appelle l’auto-surveillance glycémique (ASG)
+                    <br><br><br>
+                </p>
+                <img style="height: 50%; width: 50%" class='img-fluid w-30 h d-none d-sm-block m-2 ' src="{{url_for('static', filename='images/img_6.png')}}" >
+            </div>
+            <p class="row m-5" style="margin:1% 1% 2% 3%">
+                L’auto-surveillance de la glycémie consiste à mesurer soi-même
+                    sa glycémie à un moment donné de la journée. Elle est réalisée
+                    à partir d’une goutte de sang prélevée à l’extrémité d’un doigt.
+                    Elle peut être réalisée en n’importe quel lieu : à domicile,
+                    sur son lieu de travail, en voyage, dans un établissement sportif.
+                    Le patient peut ainsi surveiller lui-même sa glycémie
+                    et prendre les mesures nécessaires pour la contrôler au mieux.
+                    L’auto-surveillance glycémique doit s’inscrire dans
+                    une démarche d’éducation thérapeutique du patient.
+                    Lors de la prescription d’un dispositif d’ASG,
+                    il est indispensable d’expliquer au patient
+                    et d’organiser avec lui cette auto-surveillance,
+                    de définir les moments, la fréquence, les objectifs et
+                    les décisions à prendre en fonction des résultats.</p>
+
+             <h1 class="row" style="margin:1% 1% 2% 3%" ><span class="text-warning">. Visites médicales</span> </h1>
+             <div class="d-sm-flex m-5">
+                <p>
+                    Un suivi médical est mis en place pour vérifier l’efficacité du traitement. Les examens fixés permettent de s’assurer que le diabète est bien contrôlé. Le suivi doit être assuré au moins quatre fois par an par le médecin traitant, qui peut également vous orienter vers des spécialistes. Une fois par an, il faut réaliser :
+
+                    Une visite chez un ophtalmologue ;
+                    Un bilan dentaire ;
+                    Un bilan lipidique (cholestérol) ;
+                    Un bilan biologique rénal ;
+                    Un électrocardiogramme suivre diabète ;
+                    Un examen des pieds
+
+                </p>
+                 <img style="height:260%; width:300%" class='img-fluid w-30 h d-none d-sm-block m-2 '
+                      src="{{url_for('static', filename='images/img_8.png')}}" >
+            </div>
+
+
+            <h1 class="row" style="margin:1% 1% 2% 3%" ><span class="text-warning">. Le diabète au quotidien</span> </h1>
+            <h3 class="row" style="margin:1% 1% 2% 3%" ><span class="text-primary">L’alimentation</span></h3>
+             <div class="d-sm-flex m-5">
+                <p>
+                 Compte tenu de ses effets sur la glycémie,
+                    l’alimentation joue un rôle primordial dans le traitement du diabète.
+                    Il est donc important de manger équilibré et sans excès.
+                    Il est nécessaire de savoir évaluer les quantités de glucides et
+                    de kilocalories contenues dans un plat.
+                    <br><br>
+                    Il faut en effet comprendre dans quelle mesure
+                    les différents aliments influencent la glycémie.
+                    Les glucides sont les aliments qui ont l’effet le plus important sur la glycémie,
+                    ils requièrent donc une attention toute particulière. <br><br>
+                    Par conséquent, le comptage des grammes de glucides pour chaque repas et
+                    en-cas est un moyen simple de planifier vos repas et de réguler votre glycémie.
+
+                </p>
+                 <img style="height:50%; width:50%" class='img-fluid w-30 h d-none d-sm-block m-2 ' src="{{url_for('static', filename='images/img_7.png')}}" >
+            </div>
+            <p class="row m-5" style="margin:1% 1% 2% 3%">
+                Il est important d’adopter une alimentation variée et faire des repas équilibrés à
+                des horaires réguliers sans sauter de repas.
+                Il est possible de consulter son médecin ou un diététicien pour
+                mettre en place un programme alimentaire, propre à chacun
+            </p>
+
+
+            <h1 class="row" style="margin:1% 1% 2% 3%" ><span class="text-warning">. Le sport</span> </h1>
+            <div class="d-sm-flex m-5">
+                <p>
+
+                 Chez les patients diabétiques, l’activité physique peut contribuer à améliorer l’équilibre glycémique.
+                    Elle doit être régulière et adaptée au profil de la personne.
+                    Comme l’alimentation, l’activité physique fait partie du traitement.
+                    <br><br>
+                     - Activité physique et glycémie<br>
+                    L’exercice physique entraine une diminution de la glycémie.
+                    Le fait de pratiquer une activité physique régulière améliore l’activité de l’insuline et diminue le poids,
+                    ce qui contribue à réduire les complications vasculaires.
+                    Il est tout aussi important d’adopter de nouveaux réflexes pour bouger le plus possible dans la journée.
+                    Par exemple : prendre les escaliers au lieu d’attendre l’ascenseur, ne pas emprunter les escalators,
+                    ne pas chercher à tout prix à se garer le plus près possible de l’entrée des magasins
+                    mais marcher quelques mètres de plus, marcher plus rapidement…<br>
+                </p>
+                 <img style="height:320%; width:350%" class='img-fluid w-30 h d-none d-sm-block m-2 ' src="{{url_for('static', filename='images/img_14.png')}}" >
+            </div>
+            <p  class="row m-5" style="margin:1% 1% 2% 3%">
+                  <span> - Précautions </span><br>
+                    Il est recommandé d’être accompagné lors d’une activité sportive et prévenir les participants de son diabète.
+                    Par conséquent, il faut éviter les sports tels que le deltaplane, parapente, parachutisme,
+                    alpinisme en montagne, voile en solitaire, sports mécaniques…
+                    Il est important de boire pendant l’effort et de contrôler plus fréquemment
+                    la glycémie pour prévenir une hypoglycémie. Ainsi,
+                    il faut penser à toujours avoir du sucre sur soi en cas d’hypoglycémie.
+                    Ne pas hésiter à prévoir des barres de céréales, de la compote, du pain (…) en cas d’effort prolongé.
+                    Évidemment, toujours consulter son médecin avant de débuter une activité sportive !
+            </p>
+
+        </div>
+    </div>
+    <a href="/dicomedical" class=" row btn btn-primary btn-lg" style="margin:1% 0% 0% 20%">Contacter un Medecin</a><br><br><br>
+</section>
+<!--Footer-->
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+           <br>
+          <br>
+
+          <img src="https://img.icons8.com/color/48/000000/whatsapp--v6.png"/>
+          <img src="https://img.icons8.com/color/48/000000/facebook-circled--v1.png"/>
+          <img src="https://img.icons8.com/color/48/000000/instagram-new.png"/>
+          <img src="https://img.icons8.com/color/48/000000/twitter--v1.png"/>
+
+          <p>&copy; IPD 2021</p>
+          <p>groupsoutenance@gmail.com</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+          <br>
+           <br>
+
+          <img src="https://img.icons8.com/color/48/000000/whatsapp--v6.png"/>
+          <img src="https://img.icons8.com/color/48/000000/facebook-circled--v1.png"/>
+          <img src="https://img.icons8.com/color/48/000000/instagram-new.png"/>
+          <img src="https://img.icons8.com/color/48/000000/twitter--v1.png"/>
+
+          <p>&copy; IPD 2021</p>
+          <p>groupsoutenance@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- JavaScript Bundle with Popper -->
+<script src = " https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js " integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html>

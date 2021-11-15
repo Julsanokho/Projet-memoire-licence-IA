@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Diabetes prediction</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+
+  <nav class="blue lighten-1" role="navigation">
+      <div class="nav-wrapper container">
+          <ul class="navbar-nav ">
+{#                  <li class="nav-item ml-3">#}
+{#                     <a id="logo-container" href="/home" class="brand-logo">Acceuil</a>#}
+{#                  </li>#}
+                  <li class="nav-item ml-auto">
+                      <a href="/home" class="nav-link">Acceuil</a>
+                  </li>
+                  <li class="nav-item ml-auto">
+                      <a href="/annuaire" class="nav-link">Annuaire</a>
+                  </li>
+
+                  <li class="nav-item ml-auto">
+                      <a href="/dicomedical" class="nav-link">Dico Medical</a>
+                  </li>
+
+                  <li class="nav-item ml-auto">
+                      <a href="/index" class="nav-link">Votre Sante</a>
+                  </li>
+
+                  <li class="nav-item ml-auto">
+                      <a href="/about" class="nav-link">Apropos</a>
+                  </li>
+          </ul>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/login">se connecter</a></li>
+        <li><a href="/logout">Deconnecter</a></li>
+      </ul>
+      </div>
+  </nav>
+
+<section class="light-d lighten-1" role="navigation">
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+     <h5 style="text-align: center; color: brown; font-weight: 600;">{{pred}}</h5>
+      <h1 class="header center blue-text">Prédiction du diabète</h1>
+      <div class="row center">
+        <h5 class="header col s12 light orange-text">Prédire la probabilité d'avoir le diabète
+        <br>
+        </h5>
+      </div>
+
+
+      <div class="row">
+        <form action='/predict' method="post" class="col s12">
+            <div class="row">
+
+                <div class="input-field col s4">
+                    <label Class="orange-text" for="first_name"><b>Âge</b></label>
+                    <br>
+                    <input placeholder="Âge" name="1" id="first_name" type="text" class="validate">
+                </div>
+
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="first_name"><b>Genre</b></label>
+                    <br>
+                    <input placeholder="sex" name="2" id="first_name" type="text" class="validate">
+                </div>
+
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="last_name"><b>Polyurie</b></label>
+                    <br>
+                    <input id="last_name" name="3" placeholder="Polyurie"  type="text" class="validate">
+                </div>
+
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="first_name"><b>Polydipsie</b></label>
+                    <br>
+                    <input placeholder="Polydipsie" name="4" id="first_name" type="text" class="validate">
+                </div>
+
+                 <div class="input-field col s4">
+                    <label Class="orange-text"  for="last_name"><b>Perte de poids soudaine </b></label>
+                    <br>
+                    <input id="last_name" name="5" placeholder="Perte de poids soudaine"  type="text" class="validate">
+                </div>
+
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="first_name"><b>faiblesse</b></label>
+                    <br>
+                    <input placeholder="faiblesse" name="6" id="first_name" type="text" class="validate">
+                </div>
+    
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="_name"><b>Polyphagie</b></label>
+                    <br>
+                    <input id="_name" name="7" placeholder="Polyphagie" type="text" class="validate">
+
+                </div>
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="first_name"><b>Hrush génital</b></label>
+                    <br>
+                    <input placeholder="Hrush génital" name="8" id="first_name" type="text" class="validate">
+                </div>
+
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="first_name"><b>visuel flou</b></label>
+                    <br>
+                    <input placeholder="visuel flou" name="9" id="first_name" type="text" class="validate">
+                </div>
+
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="last_name"><b>Démangeaison</b></label>
+                    <br>
+                    <input id="last_name" name="10" placeholder="Démangeaison"  type="text" class="validate">
+                </div>
+
+                 <div class="input-field col s4">
+                    <label Class="orange-text"  for="last_name"><b>Irritabilité</b></label>
+                    <br>
+                    <input id="last_name" name="11" placeholder="Irritabilité"  type="text" class="validate">
+                </div>
+
+                <div class="input-field col s4">
+                  <label Class="orange-text"  ><b>guérison retardée</b></label>
+                  <br>
+                  <input name = '12' placeholder="guérison retardée">
+                </div>
+
+                <div class="input-field col s4">
+                  <label Class="orange-text"  ><b>parésie partielle</b></label>
+                  <br>
+                  <input name = '13' placeholder="parésie partielle">
+
+                </div>
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="last_name"><b>raideur musculaire</b></label>
+                    <br>
+                    <input id="last_name" name="14" placeholder="raideur musculaire"  type="text" class="validate">
+                </div>
+
+                <div class="input-field col s4">
+                    <label Class="orange-text"  for="_name"><b>Alopécie</b></label>
+                    <br>
+                    <input id="_name" name="15" placeholder="Alopécie" type="text" class="validate">
+                </div>
+
+                </div>
+                <div class="input-field col s4">
+                    <label  Class="orange-text"  for="last_name"><b>Obésité</b></label>
+                    <br>
+                    <input id="last_name" name="16" placeholder="Obésité" type="text" class="validate">
+                </div>
+{#      </div>#}
+          <div class="row center">
+
+              <button type="submit" class="btn-large waves-effect waves-light blue">Prédire la probabilité</button>
+
+          </div>
+        </form>
+  </div>
+
+      <br>
+
+
+    <br><br>
+  </div>
+  </div>
+</section>
+  <footer class="page-footer light-blue">
+    <div class="footer-copyright">
+      <div class="container" style="padding-bottom: 1rem; position: fixed; font-size: 1.2rem; margin-left: 5rem;">
+        <p>&copy; IPD</p>
+        <p>groupsoutenance@gmail.com</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,44 @@
+.container_slideshow{
+    width: 900px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+
+}
+.slid_1, .slid_2, .slid_3, .slid_4{
+    display: table-cell;
+    width: 900px;
+    height: 300px;
+}
+.container_slide{
+    width: 900px;
+    height: 300px;
+    position: absolute;
+    display: table;
+    animation: anim_slide 10s infinite alternate;
+}
+@keyframes anim_slide {
+    0%{
+        left: 0px;
+    }
+    15%{
+        left: 0px;
+    }
+    25%{
+        left: -200px;
+    }
+    50%{
+        left: -200px;
+    }
+
+    85%{
+        left: -1000px;
+    }
+    100%{
+        left: -1000px;
+    }
+}
+.img-fluid{
+   width: 900px;
+    height: 300px;
+}

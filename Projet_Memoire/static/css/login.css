@@ -1,0 +1,107 @@
+.nav-item{
+	margin-left: 83%;
+	color: #000000;
+}
+/* Bordered form */
+form{
+  margin-top:8%;
+  margin-left:30%;
+  margin-right:30%;
+  margin-bottom:30%; 
+  background-color: rgb(67, 225, 220);
+  border: 3px solid #0540f8;
+
+}
+.title{
+  text-align: center;
+}
+
+/* Full-width inputs */
+input[type=text],input[type=password] {
+  width: 50%;
+  padding: 10px 15px;
+  margin: 8px 0;
+  margin-left: 25%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all label */
+.login_label{
+	margin-left: 25%;
+}
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 10px 15px;
+  margin: 8px 0;
+
+  border: none;
+  cursor: pointer;
+  width: 20%;
+
+}
+.btnsubmit{
+   margin-left:25%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for trgb(0, 255, 255)255, 255)el button (red) */
+.cancelbtn {
+  width: auto;
+  margin-top: -2px;
+  margin-left:1%;
+  padding: 10px 18px;
+  border-radius:30%;
+  background-color: #00ffff;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 15%;
+  border-radius: 60%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.password {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.password {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+    margin-left: 50%;
+  }
+  
+ .field{
+    margin-left: 5px;
+  }
+  input.checked{
+    float: left;
+    margin-left: 0px;
+    padding-top: 16px;
+  }
+}
